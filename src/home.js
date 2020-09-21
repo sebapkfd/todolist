@@ -52,11 +52,25 @@ function renderForm(){
     
 }
 
+function renderTasks(){
+    //Has to create the divs for any task
+    let taskDiv = document.createElement('div')
+    taskDiv.className = 'container';
+    taskDiv.setAttribute('id', 'taskDiv')
+
+    let h2 = document.createElement('h2');
+    h2.textContent = 'Hello, this site was created as an assignment for The Odin Project!'
+
+    taskDiv.appendChild(h2);
+    divContent.appendChild(taskDiv)
+}
+
 
 const renderHome = () =>{
     renderTitle();
     renderInfo();
     renderForm();
+    renderTasks();
     return divContent;
 }
 

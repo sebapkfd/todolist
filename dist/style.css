@@ -13,3 +13,7 @@ body{
     flex-direction: column;
     padding: 0 25% 0 25%;
 }
+
+#taskDiv{
+    background-color: blue;
+}
