@@ -1,8 +1,11 @@
 import submit from './submit'
+import render from './renderTasks'
+import display from './display'
 
 const divContent = document.querySelector('.content');
 
 function renderTitle(){
+    //maybe on another module
     let titleDiv = document.createElement('div');
     titleDiv.className = 'container';
     let h1 = document.createElement('h1');
@@ -23,6 +26,7 @@ function renderInfo(){
 }
 
 function renderForm(){
+    //maybe on another module
     let formDiv = document.createElement('div');
     formDiv.className = 'container';
     formDiv.setAttribute('id', 'formDiv')
@@ -53,7 +57,6 @@ function renderForm(){
 }
 
 function renderTasks(){
-    //Has to create the divs for any task
     let taskDiv = document.createElement('div')
     taskDiv.className = 'container';
     taskDiv.setAttribute('id', 'taskDiv')
@@ -63,6 +66,11 @@ function renderTasks(){
 
     taskDiv.appendChild(h2);
     divContent.appendChild(taskDiv)
+
+    let arrayOfTasks = render();
+    arrayOfTasks.forEach((element)=>{
+        display(element);
+    })
 }
 
 
