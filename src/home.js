@@ -1,6 +1,7 @@
 import submit from './submit'
 import render from './renderTasks'
 import display from './display'
+import form from './form'
 
 const divContent = document.querySelector('.content');
 
@@ -26,32 +27,41 @@ function renderInfo(){
 }
 
 function renderForm(){
-    //maybe on another module
-    let formDiv = document.createElement('div');
-    formDiv.className = 'container';
-    formDiv.setAttribute('id', 'formDiv')
-    let titleInput = document.createElement('input');
-    titleInput.setAttribute('id', 'titleInput')
-    let descripInput = document.createElement('input');
-    descripInput.setAttribute('id', 'descripInput' )
-    let dateInput = document.createElement('input');
-    dateInput.setAttribute('id', 'dateInput')
-    let priorityInput = document.createElement('input');
-    priorityInput.setAttribute('id', 'priorityInput')
 
-    let submitButton = document.createElement('button')
-    submitButton.innerText = 'submit'
-    submitButton.addEventListener(('click'), () => {
-        console.log('submitting');
-        submit();
+    let formButton = document.createElement('button')
+    formButton.innerText = 'Add Task';
+    formButton.addEventListener(('click'), () =>{
+        form();
     })
 
-    formDiv.appendChild(titleInput)
-    formDiv.appendChild(descripInput)
-    formDiv.appendChild(dateInput)
-    formDiv.appendChild(priorityInput)
-    formDiv.appendChild(submitButton)
-    divContent.appendChild(formDiv)
+    divContent.appendChild(formButton)
+
+    //maybe on another module
+    // let formDiv = document.createElement('div');
+    // formDiv.className = 'container';
+    // formDiv.setAttribute('id', 'formDiv')
+    // let titleInput = document.createElement('input');
+    // titleInput.setAttribute('id', 'titleInput')
+    // let descripInput = document.createElement('input');
+    // descripInput.setAttribute('id', 'descripInput' )
+    // let dateInput = document.createElement('input');
+    // dateInput.setAttribute('id', 'dateInput')
+    // let priorityInput = document.createElement('input');
+    // priorityInput.setAttribute('id', 'priorityInput')
+
+    // let submitButton = document.createElement('button')
+    // submitButton.innerText = 'submit'
+    // submitButton.addEventListener(('click'), () => {
+    //     console.log('submitting');
+    //     submit();
+    // })
+
+    // formDiv.appendChild(titleInput)
+    // formDiv.appendChild(descripInput)
+    // formDiv.appendChild(dateInput)
+    // formDiv.appendChild(priorityInput)
+    // formDiv.appendChild(submitButton)
+    // divContent.appendChild(formDiv)
 
     
 }

@@ -13,11 +13,8 @@ const display = (taskToDisplay) =>{
     auxDiv.appendChild(deleteBtn)
 
     deleteBtn.addEventListener('click', () =>{
-        deleteTask(taskToDisplay.title);
-        
+        deleteTask(taskToDisplay.title);  
     })
-
-    
 }
 
 export default display
