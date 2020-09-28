@@ -24,6 +24,7 @@ const form = () =>{
         dateLabel.innerText = 'Date';
         let dateInput = document.createElement('input');
         dateInput.setAttribute('id', 'dateInput')
+        dateInput.setAttribute('type', 'date');
 
         let priorityLabel = document.createElement('label');
         priorityLabel.innerText = 'Priority';
