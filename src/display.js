@@ -1,10 +1,10 @@
 import deleteTask from './deleteTask'
 
-const display = (taskToDisplay) =>{
+const display = (task) =>{
     let taskDiv = document.getElementById('taskDiv');
     let auxDiv = document.createElement('div');
-    auxDiv.setAttribute('id', `${taskToDisplay.title}-div`)
-    auxDiv.innerText = `${taskToDisplay.title}`
+    auxDiv.setAttribute('id', `${task.title}-div`)
+    auxDiv.innerText = `${task.title} ${task.description} ${task.date} ${task.priority} ${task.status}`
 
     let deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Delete';
@@ -13,7 +13,7 @@ const display = (taskToDisplay) =>{
     auxDiv.appendChild(deleteBtn)
 
     deleteBtn.addEventListener('click', () =>{
-        deleteTask(taskToDisplay.title);  
+        deleteTask(task.title);  
     })
 }
 

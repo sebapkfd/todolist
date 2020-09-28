@@ -1,7 +1,5 @@
 import submit from './submit'
 
-const divContent = document.querySelector('.content');
-
 const modal = document.querySelector('.modal')
 
 const form = () =>{
@@ -9,41 +7,64 @@ const form = () =>{
 
     if(modal.firstChild == null){
         let formDiv = document.createElement('div');
-    formDiv.className = 'container';
-    formDiv.setAttribute('id', 'formDiv')
-    let titleInput = document.createElement('input');
-    titleInput.setAttribute('id', 'titleInput')
-    let descripInput = document.createElement('input');
-    descripInput.setAttribute('id', 'descripInput' )
-    let dateInput = document.createElement('input');
-    dateInput.setAttribute('id', 'dateInput')
-    let priorityInput = document.createElement('input');
-    priorityInput.setAttribute('id', 'priorityInput')
+        formDiv.className = 'container';
+        formDiv.setAttribute('id', 'formDiv')
 
-    let submitButton = document.createElement('button')
-    submitButton.innerText = 'Submit'
-    submitButton.addEventListener(('click'), () => {
-        console.log('submitting');
-        submit();
-        modal.style.display = 'none';
-    })
+        let titleLabel = document.createElement('label');
+        titleLabel.innerText = 'Title';
+        let titleInput = document.createElement('input');
+        titleInput.setAttribute('id', 'titleInput')
 
-    let cancelButton = document.createElement('button')
-    cancelButton.innerText = 'Cancel'
-    cancelButton.addEventListener(('click'), () => {
-        modal.style.display = 'none';
-    })
+        let descLabel = document.createElement('label');
+        descLabel.innerText = 'Description';
+        let descripInput = document.createElement('input');
+        descripInput.setAttribute('id', 'descripInput' )
 
-    modal.appendChild(formDiv)
-    formDiv.appendChild(titleInput)
-    formDiv.appendChild(descripInput)
-    formDiv.appendChild(dateInput)
-    formDiv.appendChild(priorityInput)
-    formDiv.appendChild(submitButton)
-    formDiv.appendChild(cancelButton)
+        let dateLabel = document.createElement('label');
+        dateLabel.innerText = 'Date';
+        let dateInput = document.createElement('input');
+        dateInput.setAttribute('id', 'dateInput')
+
+        let priorityLabel = document.createElement('label');
+        priorityLabel.innerText = 'Priority';
+        let priorityInput = document.createElement('select');
+        priorityInput.setAttribute('id', 'priorityInput')
+
+        let options = ['Low', 'Medium', 'High'];
+
+        options.forEach( (elemnt) =>{
+            let option = document.createElement('option');
+            option.setAttribute('value', elemnt);
+            let optionText = document.createTextNode(elemnt);
+            option.appendChild(optionText);
+            priorityInput.appendChild(option);
+        })
+
+        let submitButton = document.createElement('button')
+        submitButton.innerText = 'Submit'
+        submitButton.addEventListener(('click'), () => {
+            console.log('submitting');
+            submit();
+            modal.style.display = 'none';
+        })
+        let cancelButton = document.createElement('button')
+        cancelButton.innerText = 'Cancel'
+        cancelButton.addEventListener(('click'), () => {
+            modal.style.display = 'none';
+        })
+        modal.appendChild(formDiv)
+        formDiv.appendChild(titleLabel)
+        formDiv.appendChild(titleInput)
+        formDiv.appendChild(descLabel)
+        formDiv.appendChild(descripInput)
+        formDiv.appendChild(dateLabel)
+        formDiv.appendChild(dateInput)
+        formDiv.appendChild(priorityLabel)
+        formDiv.appendChild(priorityInput)
+        formDiv.appendChild(submitButton)
+        formDiv.appendChild(cancelButton)
+
     }
-
-    
 }
 
 export default form
