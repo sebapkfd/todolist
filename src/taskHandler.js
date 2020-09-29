@@ -10,6 +10,6 @@ const TaskList = () =>{
 }
 
 let taskArray = TaskList();
-taskArray.addTask(Task('Complete TOP', 'xd', 'tomorrow', 'High'))
+taskArray.addTask(Task('Complete TOP', 'Very important', '01-01-2021', 'High'))
 
 export default taskArray
