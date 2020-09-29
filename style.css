@@ -41,3 +41,7 @@ body{
     width: 30%;
     margin: 5em auto;
 }
+
+.statusDiv{
+    color: red;
+}
