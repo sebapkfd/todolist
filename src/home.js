@@ -1,6 +1,7 @@
 import render from './renderTasks'
 import display from './display'
 import form from './form'
+import clean from './clean'
 
 const divContent = document.querySelector('.content');
 
@@ -17,20 +18,45 @@ function renderTitle(){
 function renderInfo(){
     let infoDiv = document.createElement('div');
     infoDiv.className = 'container';
-    let h2 = document.createElement('h2');
-    h2.textContent = 'Hello, this site was created as an assignment for The Odin Project!'
+    infoDiv.setAttribute('id', 'infoDiv')
 
-    infoDiv.appendChild(h2);
-    divContent.appendChild(infoDiv);
-}
+    let allBtn = document.createElement('button');
+    allBtn.innerText = 'All';
 
-function renderForm(){
+    let doneBtn = document.createElement('button');
+    doneBtn.innerText = 'Completed';
+
+    let notDoneBtn = document.createElement('button');
+    notDoneBtn.innerText = 'Not completed';
+
     let formButton = document.createElement('button')
     formButton.innerText = 'Add Task';
-    formButton.addEventListener(('click'), () =>{
-        form();
+
+    infoDiv.appendChild(allBtn);
+    infoDiv.appendChild(doneBtn);
+    infoDiv.appendChild(notDoneBtn);
+    infoDiv.appendChild(formButton);
+    divContent.append(infoDiv)
+
+    allBtn.addEventListener('click', ()=>{
+        divContent.removeChild(divContent.lastChild);
+        renderTasks();
     })
-    divContent.appendChild(formButton)
+
+    doneBtn.addEventListener('click', ()=>{
+        divContent.removeChild(divContent.lastChild);
+        renderTasks();
+    })
+
+    notDoneBtn.addEventListener('click', ()=>{
+        divContent.removeChild(divContent.lastChild);
+        renderTasks();
+    })
+    
+    formButton.addEventListener(('click'), () =>{
+        divContent.removeChild(divContent.lastChild);
+        renderTasks();
+    })
 }
 
 function renderTasks(){
@@ -49,7 +75,6 @@ function renderTasks(){
 const renderHome = () =>{
     renderTitle();
     renderInfo();
-    renderForm();
     renderTasks();
     return divContent;
 }
