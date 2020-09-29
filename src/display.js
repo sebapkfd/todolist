@@ -1,4 +1,6 @@
 import deleteTask from './deleteTask'
+import changeStatus from './changeStatus'
+import changeDivStatus from './changeStatusDiv';
 
 const display = (task) =>{
     let taskDiv = document.getElementById('taskDiv');
@@ -23,7 +25,15 @@ const display = (task) =>{
 
     let statusDiv = document.createElement('div');
     statusDiv.setAttribute('id', `${task.title}-statusDiv`);
-    statusDiv.innerText = `${task.status}`;
+    statusDiv.className = 'statusDiv';
+
+    if(task.status == true){
+        statusDiv.innerText = 'Already done';
+        statusDiv.setAttribute('style', 'color: rgb(24, 110, 17)');
+    }else if (task.status == false){
+        statusDiv.innerText = 'Not done yet';
+        statusDiv.setAttribute('style', 'color: rgb(218, 42, 42)');
+    }
 
     let deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Delete';
@@ -45,7 +55,8 @@ const display = (task) =>{
     })
 
     statusBtn.addEventListener('click', ()=>{
-        console.log(task.title);
+        changeStatus(task.title);
+        changeDivStatus(task.title)
     })
 }
 

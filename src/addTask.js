@@ -1,11 +1,5 @@
-import Task from './task'
-import taskArray from './taskHandler'
-
-function addTask(title, description, date, priority){
-    let taskToAdd = new Task(title, description, date, priority);
-    taskArray.push(taskToAdd);
+const addTask = (task) =>{
+    localStorage.setItem(`${task.title}`, JSON.stringify(task));
 }
 
-export {
-    addTask
-}
+export default addTask

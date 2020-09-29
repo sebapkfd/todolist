@@ -1,5 +1,5 @@
 import Task from './task'
-import taskArray from './taskHandler'
+import addTask from './addTask'
 import date from './date'
 
 const submit = () =>{
@@ -8,8 +8,8 @@ const submit = () =>{
     let dateToAdd = date(document.getElementById('dateInput').value);
     let priorityToAdd = document.getElementById('priorityInput').value;
     if(titleToAdd != '' && descToAdd != '' && dateToAdd != '' && priorityToAdd != ''){
-        let taskToAdd = Task(titleToAdd, descToAdd, dateToAdd, priorityToAdd);
-        taskArray.addTask(taskToAdd)
+        let taskToAdd = Task(titleToAdd, descToAdd, dateToAdd, priorityToAdd, false);
+        addTask(taskToAdd)
     }
     location.reload();
 }
