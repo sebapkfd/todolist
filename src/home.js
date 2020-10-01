@@ -1,7 +1,6 @@
 import render from './renderTasks'
 import display from './display'
 import form from './form'
-import clean from './clean'
 
 const divContent = document.querySelector('.content');
 
@@ -45,31 +44,49 @@ function renderInfo(){
 
     doneBtn.addEventListener('click', ()=>{
         divContent.removeChild(divContent.lastChild);
-        renderTasks();
+        renderFiltered(true);
     })
 
     notDoneBtn.addEventListener('click', ()=>{
         divContent.removeChild(divContent.lastChild);
-        renderTasks();
+        renderFiltered(false);
     })
     
     formButton.addEventListener(('click'), () =>{
-        divContent.removeChild(divContent.lastChild);
-        renderTasks();
+        form();
     })
 }
 
-function renderTasks(){
+function renderTasks(){//
     let taskDiv = document.createElement('div')
     taskDiv.className = 'container';
     taskDiv.setAttribute('id', 'taskDiv')
     divContent.appendChild(taskDiv)
 
     let arrayOfTasks = render();
+    console.log(arrayOfTasks);
     arrayOfTasks.forEach((element)=>{
         display(element);
     })
 }
+
+function renderFiltered(filterStatus){
+    let taskDiv = document.createElement('div')
+    taskDiv.className = 'container';
+    taskDiv.setAttribute('id', 'taskDiv')
+    divContent.appendChild(taskDiv)
+    let arrayOfTasks = render();
+    let tasksCompleted = [];
+    if(filterStatus){
+        tasksCompleted = arrayOfTasks.filter(task =>task.status == true)
+    }else if (!filterStatus){
+        tasksCompleted = arrayOfTasks.filter(task =>task.status == false)
+    }
+    tasksCompleted.forEach((element)=>{
+        display(element)
+    })
+}
+
 
 
 const renderHome = () =>{
