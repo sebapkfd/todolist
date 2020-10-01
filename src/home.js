@@ -57,7 +57,7 @@ function renderInfo(){
     })
 }
 
-function renderTasks(){//
+function renderTasks(){
     let taskDiv = document.createElement('div')
     taskDiv.className = 'container';
     taskDiv.setAttribute('id', 'taskDiv')
