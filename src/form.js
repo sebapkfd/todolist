@@ -2,7 +2,7 @@ import submit from './submit'
 
 const modal = document.querySelector('.modal')
 
-const form = () =>{
+const form = (editing = false) =>{
     modal.style.display = 'block';
 
     if(modal.firstChild == null){
@@ -41,11 +41,22 @@ const form = () =>{
             priorityInput.appendChild(option);
         })
 
+        if(editing != false){
+            //Add date, priority and status previous
+            titleInput.defaultValue = editing.title;
+            descripInput.defaultValue = editing.description;
+        }
+
         let submitButton = document.createElement('button')
         submitButton.innerText = 'Submit'
         submitButton.addEventListener(('click'), () => {
             console.log('submitting');
-            submit();
+            if(editing == false){
+                submit(false);
+            }
+            else if(editing != false){
+                submit(true);
+            }
             modal.style.display = 'none';
         })
         let cancelButton = document.createElement('button')
@@ -64,7 +75,6 @@ const form = () =>{
         formDiv.appendChild(priorityInput)
         formDiv.appendChild(submitButton)
         formDiv.appendChild(cancelButton)
-
     }
 }
 

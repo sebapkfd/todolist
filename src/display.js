@@ -1,6 +1,7 @@
 import deleteTask from './deleteTask'
 import changeStatus from './changeStatus'
 import changeDivStatus from './changeStatusDiv';
+import form from './form'
 
 const display = (task) =>{
     let taskDiv = document.getElementById('taskDiv');
@@ -41,6 +42,9 @@ const display = (task) =>{
     let statusBtn = document.createElement('button');
     statusBtn.innerText = 'Mark as complete';
 
+    let editBtn = document.createElement('button');
+    editBtn.innerText = 'Edit';
+
     taskDiv.appendChild(auxDiv);
     auxDiv.appendChild(titleDiv);
     auxDiv.appendChild(descDiv);
@@ -49,14 +53,19 @@ const display = (task) =>{
     auxDiv.appendChild(statusDiv);
     auxDiv.appendChild(deleteBtn);
     auxDiv.appendChild(statusBtn);
+    auxDiv.appendChild(editBtn);
 
     deleteBtn.addEventListener('click', () =>{
         deleteTask(task.title);  
     })
 
-    statusBtn.addEventListener('click', ()=>{
+    statusBtn.addEventListener('click', () =>{
         changeStatus(task.title);
-        changeDivStatus(task.title)
+        changeDivStatus(task.title);
+    })
+
+    editBtn.addEventListener('click', () =>{
+        form(task);
     })
 }
 

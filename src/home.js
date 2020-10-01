@@ -53,7 +53,7 @@ function renderInfo(){
     })
     
     formButton.addEventListener(('click'), () =>{
-        form();
+        form(false);
     })
 }
 

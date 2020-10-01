@@ -3,17 +3,20 @@ import addTask from './addTask'
 import date from './date'
 import render from './renderTasks'
 
-const submit = () =>{
+const submit = (editing) =>{
     let titleToAdd = document.getElementById('titleInput').value;
     let descToAdd = document.getElementById('descripInput').value;
     let dateToAdd = date(document.getElementById('dateInput').value);
     let priorityToAdd = document.getElementById('priorityInput').value;
     if(titleToAdd != '' && descToAdd != '' && dateToAdd != '' && priorityToAdd != ''){
-        let taskToAdd = Task(titleToAdd, descToAdd, dateToAdd, priorityToAdd, false);
+        let taskToAdd = Task(titleToAdd, descToAdd, dateToAdd, priorityToAdd, false); //dont change the status
         let tasks = render();
         let alreadyAdded = tasks.find( Element => Element.title == titleToAdd);
-        if(alreadyAdded == undefined){
-            addTask(taskToAdd)
+        if(alreadyAdded == undefined && editing == false){
+            addTask(taskToAdd);
+        }
+        if(alreadyAdded != undefined && editing == true){
+            addTask(taskToAdd);
         }
     }
     location.reload();
