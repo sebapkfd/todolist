@@ -1,7 +1,7 @@
 import Task from './task'
 import addTask from './addTask'
 import date from './date'
-import render from './renderTasks'
+import render from './render'
 
 const submit = (editing, defaultStatus = false) =>{
     let titleToAdd = document.getElementById('titleInput').value;

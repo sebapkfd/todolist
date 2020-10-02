@@ -23,6 +23,14 @@ const display = (task) =>{
     let priorityDiv = document.createElement('div');
     priorityDiv.setAttribute('id', `${task.title}-priorityDiv`);
     priorityDiv.innerText = `${task.priority}`;
+    
+    if(task.priority == 'Low'){
+        priorityDiv.setAttribute('style', 'color: rgb(24, 110, 17)');
+    }else if (task.priority == 'Medium'){
+        priorityDiv.setAttribute('style', 'color: rgb(231, 197, 4)');
+    }else if(task.priority == 'High'){
+        priorityDiv.setAttribute('style', 'color: rgb(218, 42, 42)');
+    }
 
     let statusDiv = document.createElement('div');
     statusDiv.setAttribute('id', `${task.title}-statusDiv`);
