@@ -62,6 +62,7 @@ const display = (task) =>{
     statusBtn.addEventListener('click', () =>{
         changeStatus(task.title);
         changeDivStatus(task.title);
+        location.reload();
     })
 
     editBtn.addEventListener('click', () =>{

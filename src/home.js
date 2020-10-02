@@ -8,7 +8,7 @@ function renderTitle(){
     let titleDiv = document.createElement('div');
     titleDiv.className = 'container';
     let h1 = document.createElement('h1');
-    h1.textContent = 'Home';
+    h1.textContent = 'To Do List';
 
     titleDiv.appendChild(h1);
     divContent.appendChild(titleDiv);
@@ -64,7 +64,6 @@ function renderTasks(){
     divContent.appendChild(taskDiv)
 
     let arrayOfTasks = render();
-    console.log(arrayOfTasks);
     arrayOfTasks.forEach((element)=>{
         display(element);
     })
@@ -75,6 +74,7 @@ function renderFiltered(filterStatus){
     taskDiv.className = 'container';
     taskDiv.setAttribute('id', 'taskDiv')
     divContent.appendChild(taskDiv)
+    
     let arrayOfTasks = render();
     let tasksCompleted = [];
     if(filterStatus){

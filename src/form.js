@@ -56,7 +56,6 @@ const form = (editing = false) =>{
         let submitButton = document.createElement('button')
         submitButton.innerText = 'Submit'
         submitButton.addEventListener(('click'), () => {
-            console.log('submitting');
             if(editing == false){
                 submit(false);
             }
