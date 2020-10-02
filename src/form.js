@@ -1,4 +1,5 @@
 import submit from './submit'
+import date from './date'
 
 const modal = document.querySelector('.modal')
 
@@ -42,9 +43,14 @@ const form = (editing = false) =>{
         })
 
         if(editing != false){
-            //Add date, priority and status previous
             titleInput.defaultValue = editing.title;
             descripInput.defaultValue = editing.description;
+            dateInput.defaultValue = date(editing.date);
+            for (let i = 0; i < options.length; i++) {
+                if(options[i] == editing.priority){
+                    priorityInput.selectedIndex = i
+                }
+            }
         }
 
         let submitButton = document.createElement('button')
