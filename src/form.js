@@ -61,7 +61,7 @@ const form = (editing = false) =>{
                 submit(false);
             }
             else if(editing != false){
-                submit(true);
+                submit(true, editing.status);
             }
             modal.style.display = 'none';
         })
