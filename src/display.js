@@ -6,21 +6,26 @@ import form from './form'
 const display = (task) =>{
     let taskDiv = document.getElementById('taskDiv');
     let auxDiv = document.createElement('div');
+    auxDiv.className = 'task-container';
     auxDiv.setAttribute('id', `${task.title}-div`)
 
     let titleDiv = document.createElement('div');
+    titleDiv.className = 'task-titleDiv'
     titleDiv.setAttribute('id', `${task.title}-titleDiv`);
     titleDiv.innerText = `${task.title}`;
 
     let descDiv = document.createElement('div');
+    descDiv.className = 'task-descDiv'
     descDiv.setAttribute('id', `${task.title}-descDiv`);
     descDiv.innerText = `${task.description}`;
 
     let dateDiv = document.createElement('div');
+    dateDiv.className = 'task-dateDiv';
     dateDiv.setAttribute('id', `${task.title}-dateDiv`);
     dateDiv.innerText = `${task.date}`;
 
     let priorityDiv = document.createElement('div');
+    priorityDiv.className = 'task-priorityDiv'
     priorityDiv.setAttribute('id', `${task.title}-priorityDiv`);
     priorityDiv.innerText = `${task.priority}`;
     

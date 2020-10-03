@@ -5,7 +5,7 @@ const divContent = document.querySelector('.content');
 
 function renderTitle(){
     let titleDiv = document.createElement('div');
-    titleDiv.className = 'container';
+    titleDiv.setAttribute('id', 'titleDiv');
     let h1 = document.createElement('h1');
     h1.textContent = 'To Do List';
 
@@ -15,7 +15,6 @@ function renderTitle(){
 
 function renderProjectsInfo(){
     let pjDiv = document.createElement('div');
-    pjDiv.className = 'container';
     pjDiv.setAttribute('id', 'pjDiv');
 
     let h2 = document.createElement('h2');
@@ -36,9 +35,8 @@ function renderProjectsInfo(){
 }
 
 function renderTasksInfo(){
-    let infoDiv = document.createElement('div');
-    infoDiv.className = 'container';
-    infoDiv.setAttribute('id', 'infoDiv')
+    let tasksBtnDiv = document.createElement('div');
+    tasksBtnDiv.setAttribute('id', 'tasksBtnDiv')
 
     let allBtn = document.createElement('button');
     allBtn.innerText = 'All';
@@ -52,11 +50,11 @@ function renderTasksInfo(){
     let formButton = document.createElement('button')
     formButton.innerText = 'Add Task';
 
-    infoDiv.appendChild(allBtn);
-    infoDiv.appendChild(doneBtn);
-    infoDiv.appendChild(notDoneBtn);
-    infoDiv.appendChild(formButton);
-    divContent.append(infoDiv)
+    tasksBtnDiv.appendChild(allBtn);
+    tasksBtnDiv.appendChild(doneBtn);
+    tasksBtnDiv.appendChild(notDoneBtn);
+    tasksBtnDiv.appendChild(formButton);
+    divContent.append(tasksBtnDiv)
 
     allBtn.addEventListener('click', ()=>{
         divContent.removeChild(divContent.lastChild);

@@ -8,7 +8,6 @@ const form = (editing = false) =>{
 
     if(modal.firstChild == null){
         let formDiv = document.createElement('div');
-        formDiv.className = 'container';
         formDiv.setAttribute('id', 'formDiv')
 
         let titleLabel = document.createElement('label');

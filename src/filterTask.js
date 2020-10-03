@@ -3,8 +3,7 @@ import render from './render'
 const divContent = document.querySelector('.content');
 
 const filterTask = (filterStatus) =>{
-    let taskDiv = document.createElement('div')
-    taskDiv.className = 'container';
+    let taskDiv = document.createElement('div');
     taskDiv.setAttribute('id', 'taskDiv')
     divContent.appendChild(taskDiv)
     
