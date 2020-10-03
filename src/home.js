@@ -13,7 +13,29 @@ function renderTitle(){
     divContent.appendChild(titleDiv);
 }
 
-function renderInfo(){
+function renderProjectsInfo(){
+    let pjDiv = document.createElement('div');
+    pjDiv.className = 'container';
+    pjDiv.setAttribute('id', 'pjDiv');
+
+    let h2 = document.createElement('h2');
+    h2.textContent = 'Projects';
+
+    let addProject = document.createElement('button');
+    addProject.innerText = 'Add Project';
+
+    let deleteProject = document.createElement('button');
+    deleteProject.innerText = 'Delete Project';
+
+    pjDiv.appendChild(h2);
+    pjDiv.appendChild(addProject);
+    pjDiv.appendChild(deleteProject);
+
+    
+    divContent.appendChild(pjDiv);
+}
+
+function renderTasksInfo(){
     let infoDiv = document.createElement('div');
     infoDiv.className = 'container';
     infoDiv.setAttribute('id', 'infoDiv')
@@ -58,7 +80,8 @@ function renderInfo(){
 
 const renderHome = () =>{
     renderTitle();
-    renderInfo();
+    renderProjectsInfo();
+    renderTasksInfo();
     filterTask();
     return divContent;
 }
