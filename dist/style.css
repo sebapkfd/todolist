@@ -7,10 +7,10 @@ body{
 
 button{
     border: none;
-    margin: 0 0.5rem;
+    /* margin: 0 0.5rem; */
     border-radius: 2px;
     height: 2em;
-    transition: 0.2s; 
+    transition: 0.2s;
 }
 
 button:hover{
@@ -21,10 +21,6 @@ button:hover{
 h1{
     margin: 0;
     padding: 0 2.5vw;
-}
-
-h2{
-    margin: 0;
 }
 
 .content{
@@ -54,6 +50,7 @@ h2{
     border-radius: 15px;
     padding: 1em;
     margin: 1em;
+    margin-left: 2.5vw;
 }
 
 .buttonsDiv{
@@ -90,12 +87,8 @@ h2{
     margin:0;
 }
 
-#pjDiv{
-    padding: 1vw;
-    padding-left: 2.5vw;
-    color: rgb(27, 28, 31);
-}
-
 #tasksBtnDiv{
     background-color: rgb(196, 196, 196);
+    padding: 0 2.5vw;
+    margin-top: 1vw;
 }

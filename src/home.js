@@ -13,27 +13,6 @@ function renderTitle(){
     divContent.appendChild(titleDiv);
 }
 
-function renderProjectsInfo(){
-    let pjDiv = document.createElement('div');
-    pjDiv.setAttribute('id', 'pjDiv');
-
-    let h2 = document.createElement('h2');
-    h2.textContent = 'Projects';
-
-    let addProject = document.createElement('button');
-    addProject.innerText = 'Add Project';
-
-    let deleteProject = document.createElement('button');
-    deleteProject.innerText = 'Delete Project';
-
-    pjDiv.appendChild(h2);
-    pjDiv.appendChild(addProject);
-    pjDiv.appendChild(deleteProject);
-
-    
-    divContent.appendChild(pjDiv);
-}
-
 function renderTasksInfo(){
     let tasksBtnDiv = document.createElement('div');
     tasksBtnDiv.setAttribute('id', 'tasksBtnDiv')
@@ -78,7 +57,6 @@ function renderTasksInfo(){
 
 const renderHome = () =>{
     renderTitle();
-    renderProjectsInfo();
     renderTasksInfo();
     filterTask();
     return divContent;
