@@ -49,14 +49,22 @@ const display = (task) =>{
         statusDiv.setAttribute('style', 'color: rgb(218, 42, 42)');
     }
 
+
+    let buttonsDiv = document.createElement('div');
+    buttonsDiv.setAttribute('id', `${task.title}-buttonsDiv`);
+    buttonsDiv.className = 'buttonsDiv';
+
     let deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Delete';
+    deleteBtn.className = 'taskBtn'
 
     let statusBtn = document.createElement('button');
     statusBtn.innerText = 'Mark as complete';
+    statusbar.className = 'taskBtn'
 
     let editBtn = document.createElement('button');
     editBtn.innerText = 'Edit';
+    editBtn.className = 'taskBtn';
 
     taskDiv.appendChild(auxDiv);
     auxDiv.appendChild(titleDiv);
@@ -64,9 +72,10 @@ const display = (task) =>{
     auxDiv.appendChild(dateDiv);
     auxDiv.appendChild(priorityDiv);
     auxDiv.appendChild(statusDiv);
-    auxDiv.appendChild(deleteBtn);
-    auxDiv.appendChild(statusBtn);
-    auxDiv.appendChild(editBtn);
+    auxDiv.appendChild(buttonsDiv);
+    buttonsDiv.appendChild(deleteBtn);
+    buttonsDiv.appendChild(statusBtn);
+    buttonsDiv.appendChild(editBtn);
 
     deleteBtn.addEventListener('click', () =>{
         deleteTask(task.title);  
