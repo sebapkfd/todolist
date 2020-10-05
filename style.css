@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(240, 233, 233);
     color: rgb(240, 233, 233);
     font-family: 'Numans', sans-serif;
     margin: 0;
@@ -65,10 +65,6 @@ h1{
     flex-direction: column;
 }
 
-#taskDiv{
-    background-color: rgb(196, 196, 196);
-}
-
 #formDiv{
     padding: 2rem 2rem;
     border-radius: 15px;
@@ -87,7 +83,6 @@ h1{
 }
 
 #tasksBtnDiv{
-    background-color: rgb(196, 196, 196);
     padding: 0 2.5vw;
     margin-top: 1vw;
 }
