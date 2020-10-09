@@ -1,6 +1,6 @@
 const date = (dateStr) =>{
-    let aux = dateStr.split(/\D/g)
-    return [aux[2],aux[1],aux[0] ].join("-")
-}
+    let aux = dateStr.split(/\D/g);
+    return [aux[2],aux[1],aux[0] ].join("-");
+};
 
-export default date
+export default date;

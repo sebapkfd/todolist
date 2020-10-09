@@ -1,7 +1,7 @@
-import Task from './task'
-import addTask from './addTask'
-import date from './date'
-import render from './render'
+import Task from './task';
+import addTask from './addTask';
+import date from './date';
+import render from './render';
 
 const submit = (editing, defaultStatus = false) =>{
     let titleToAdd = document.getElementById('titleInput').value;
@@ -21,6 +21,6 @@ const submit = (editing, defaultStatus = false) =>{
         }
     }
     location.reload();
-}
+};
 
-export default submit
+export default submit;

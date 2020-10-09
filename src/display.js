@@ -1,21 +1,21 @@
-import deleteTask from './deleteTask'
-import changeStatus from './changeStatus'
+import deleteTask from './deleteTask';
+import changeStatus from './changeStatus';
 import changeDivStatus from './changeStatusDiv';
-import form from './form'
+import form from './form';
 
 const display = (task) =>{
     let taskDiv = document.getElementById('taskDiv');
     let auxDiv = document.createElement('div');
     auxDiv.className = 'task-container';
-    auxDiv.setAttribute('id', `${task.title}-div`)
+    auxDiv.setAttribute('id', `${task.title}-div`);
 
     let titleDiv = document.createElement('div');
-    titleDiv.className = 'task-titleDiv'
+    titleDiv.className = 'task-titleDiv';
     titleDiv.setAttribute('id', `${task.title}-titleDiv`);
     titleDiv.innerText = `${task.title}`;
 
     let descDiv = document.createElement('div');
-    descDiv.className = 'task-descDiv'
+    descDiv.className = 'task-descDiv';
     descDiv.setAttribute('id', `${task.title}-descDiv`);
     descDiv.innerText = `${task.description}`;
 
@@ -25,7 +25,7 @@ const display = (task) =>{
     dateDiv.innerText = `${task.date}`;
 
     let priorityDiv = document.createElement('div');
-    priorityDiv.className = 'task-priorityDiv'
+    priorityDiv.className = 'task-priorityDiv';
     priorityDiv.setAttribute('id', `${task.title}-priorityDiv`);
     priorityDiv.innerText = `${task.priority}`;
     
@@ -56,11 +56,11 @@ const display = (task) =>{
 
     let deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Delete';
-    deleteBtn.className = 'taskBtn'
+    deleteBtn.className = 'taskBtn';
 
     let statusBtn = document.createElement('button');
     statusBtn.innerText = 'Mark as complete';
-    statusbar.className = 'taskBtn'
+    statusbar.className = 'taskBtn';
 
     let editBtn = document.createElement('button');
     editBtn.innerText = 'Edit';
@@ -79,17 +79,17 @@ const display = (task) =>{
 
     deleteBtn.addEventListener('click', () =>{
         deleteTask(task.title);  
-    })
+    });
 
     statusBtn.addEventListener('click', () =>{
         changeStatus(task.title);
         changeDivStatus(task.title);
         location.reload();
-    })
+    });
 
     editBtn.addEventListener('click', () =>{
         form(task);
-    })
-}
+    });
+};
 
-export default display
+export default display;

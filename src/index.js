@@ -1,3 +1,3 @@
-import renderHome from './home'
+import renderHome from './home';
 
 renderHome();

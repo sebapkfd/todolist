@@ -3,7 +3,7 @@ const Task = (title, description, date, priority, status = false) =>{
         description,
         date,
         priority,
-        status}
-}
+        status};
+};
 
-export default Task
+export default Task;

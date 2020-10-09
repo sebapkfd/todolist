@@ -8,6 +8,6 @@ const changeDivStatus = (task) =>{
         divToChange.textContent = 'Not done yet';
         divToChange.setAttribute('style', 'color: rgb(218, 42, 42)');
     }
-}
+};
 
-export default changeDivStatus
+export default changeDivStatus;

@@ -1,5 +1,5 @@
-import form from './form'
-import filterTask from './filterTask'
+import form from './form';
+import filterTask from './filterTask';
 
 const divContent = document.querySelector('.content');
 
@@ -15,7 +15,7 @@ function renderTitle(){
 
 function renderTasksInfo(){
     let tasksBtnDiv = document.createElement('div');
-    tasksBtnDiv.setAttribute('id', 'tasksBtnDiv')
+    tasksBtnDiv.setAttribute('id', 'tasksBtnDiv');
 
     let allBtn = document.createElement('button');
     allBtn.innerText = 'All';
@@ -26,33 +26,33 @@ function renderTasksInfo(){
     let notDoneBtn = document.createElement('button');
     notDoneBtn.innerText = 'Not completed';
 
-    let formButton = document.createElement('button')
+    let formButton = document.createElement('button');
     formButton.innerText = 'Add Task';
 
     tasksBtnDiv.appendChild(allBtn);
     tasksBtnDiv.appendChild(doneBtn);
     tasksBtnDiv.appendChild(notDoneBtn);
     tasksBtnDiv.appendChild(formButton);
-    divContent.append(tasksBtnDiv)
+    divContent.append(tasksBtnDiv);
 
     allBtn.addEventListener('click', ()=>{
         divContent.removeChild(divContent.lastChild);
         filterTask(null);
-    })
+    });
 
     doneBtn.addEventListener('click', ()=>{
         divContent.removeChild(divContent.lastChild);
         filterTask(true);
-    })
+    });
 
     notDoneBtn.addEventListener('click', ()=>{
         divContent.removeChild(divContent.lastChild);
         filterTask(false);
-    })
+    });
     
     formButton.addEventListener(('click'), () =>{
         form(false);
-    })
+    });
 }
 
 const renderHome = () =>{
@@ -60,6 +60,6 @@ const renderHome = () =>{
     renderTasksInfo();
     filterTask();
     return divContent;
-}
+};
 
-export default renderHome
+export default renderHome;
