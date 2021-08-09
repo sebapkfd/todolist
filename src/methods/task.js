@@ -1,14 +1,11 @@
-const Task = (values) => {
-    const {title, description, date, priority, status} = values;
-
+const Task = (title, description, date, priority, status = false) =>{
     return {
-        title,
+        title, 
         description,
         date,
         priority,
         status
-    }
-
-}
+    };
+};
 
 export default Task;
