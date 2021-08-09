@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.todo {
+    border: 1px solid black;
+    margin: 15px;
+}

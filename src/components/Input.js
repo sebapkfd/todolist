@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import saveTask from "../methods/saveTask";
 
-const Input = () => {
+const Input = (props) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [date, setDate] = useState('');
     const [priority, setPriority] = useState('');
+    const {add} = props
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const task = {title, description, date, priority, status: false};
-        saveTask(task);
+        add(task);
     }
 
     return (
