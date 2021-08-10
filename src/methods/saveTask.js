@@ -1,5 +1,5 @@
 const saveTask = (task) => {
-    localStorage.setItem(`${localStorage.length}${task.title}`, JSON.stringify(task));
+    localStorage.setItem(task.id, JSON.stringify(task));
 }
 
 export default saveTask;

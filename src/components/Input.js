@@ -9,7 +9,8 @@ const Input = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const task = {title, description, date, priority, status: false};
+        const id = `${localStorage.length}${title}`
+        const task = {title, id, description, date, priority, status: false};
         add(task);
     }
 

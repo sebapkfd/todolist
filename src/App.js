@@ -10,11 +10,11 @@ function App() {
 
   const updateList = (task) => {
     saveTask(task);
-    setList([...list, task])
+    setList((list)=> [...list, task])
   }
 
   useEffect(() => {
-    setList(() => getTodos());
+    setList(getTodos());
   }, [])
 
   return (

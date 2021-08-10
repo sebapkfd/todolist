@@ -6,7 +6,7 @@ const List = (props) => {
     return (list) ? (
         <div id='todolist'>
             {list.map((todo, index) => {
-                return <Todo todo={todo} key={`${todo.title}${index}`}/>
+                return <Todo todo={todo} key={todo.id}/>
             })}
         </div>
     ) : null;

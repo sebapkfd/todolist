@@ -1,6 +1,7 @@
 const Task = (title, description, date, priority, status = false) =>{
     return {
-        title, 
+        title,
+        id,
         description,
         date,
         priority,
