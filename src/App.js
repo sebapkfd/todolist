@@ -10,7 +10,7 @@ function App() {
 
   const updateList = (task) => {
     saveTask(task);
-    setList((list)=> [...list || [], task])
+    setList((list)=> [...list || [], task]);
   }
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <Input add={updateList}/>
+      <Input add={updateList} />
       <List list={list}/>
     </div>
   );

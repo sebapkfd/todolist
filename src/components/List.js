@@ -5,7 +5,7 @@ const List = (props) => {
 
     return (list) ? (
         <div id='todolist'>
-            {list.map((todo, index) => {
+            {list.map((todo) => {
                 return <Todo todo={todo} key={todo.id}/>
             })}
         </div>
