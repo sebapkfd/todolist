@@ -5,7 +5,7 @@ const Task = (title, id, description, date, priority ) =>{
         description,
         date,
         priority,
-        status: 'Not completed'
+        status: 'Not Completed'
     };
 };
 
