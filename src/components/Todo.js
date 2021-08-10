@@ -28,7 +28,6 @@ const Todo = (props) => {
                 <p>{date}</p>
                 <p>Priority: {priority}</p>
                 <p>Status: {status}</p>
-                <p>ID: {id}</p>
                 <button onClick={() => deleteTodo()}>Delete</button>
                 <button onClick={() => updateStatus()}>{updateButtonText}</button>
             </div>

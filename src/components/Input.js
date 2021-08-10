@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Task from "../methods/task";
+import dateFormat from "../methods/dateFormat";
 
 const Input = (props) => {
     const [title, setTitle] = useState('');
@@ -11,7 +12,7 @@ const Input = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const id = `${localStorage.length}${title}`;
-        const task = Task(title, id, description, date, priority);
+        const task = Task(title, id, description, dateFormat(date), priority);
         add(task);
     }
 
