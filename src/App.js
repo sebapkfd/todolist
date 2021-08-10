@@ -10,7 +10,7 @@ function App() {
 
   const updateList = (task) => {
     saveTask(task);
-    setList((list)=> [...list, task])
+    setList((list)=> [...list || [], task])
   }
 
   useEffect(() => {
