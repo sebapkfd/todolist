@@ -6,7 +6,7 @@ const List = (props) => {
     return (list) ? (
         <div id='todolist'>
             {list.map((todo) => {
-                return <Todo todo={todo} key={todo.id}/>
+                return <Todo todo={todo} key={Math.random()*100}/>
             })}
         </div>
     ) : null;
