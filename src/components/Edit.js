@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import Task from "../methods/task";
+import saveTask from "../methods/saveTask";
 
 const Input = (props) => {
-    const {add} = props;
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [date, setDate] = useState('');
-    const [priority, setPriority] = useState('Low');
+    const {values, updateTodo} = props;
+    const [title, setTitle] = useState(values.title);
+    const [description, setDescription] = useState(values.description);
+    const [date, setDate] = useState(values.date);
+    const [priority, setPriority] = useState(values.priority);
+    const [display, setDisplay] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const id = `${localStorage.length}${title}`;
-        const task = Task(title, id, description, date, priority);
-        add(task);
-        setTitle('');
-        setDescription('');
-        setDate('');
-        setPriority('Low');
+        const task = Task(title, values.id, description, date, priority);
+        saveTask(task);
+        updateTodo(task);
+        setDisplay(false);
     }
 
-    return (
+    return (display) ? (
         <form onSubmit={(e) => handleSubmit(e)}>
             <label htmlFor='title'>Title: </label>
             <input type ='text' name='title' value={title} onChange={(e) =>setTitle(e.target.value)} required />
@@ -35,7 +34,7 @@ const Input = (props) => {
             </select>
             <button type='submit'>Ok</button>
         </form>
-    )
+    ) : null;
 }
 
 export default Input;

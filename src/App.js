@@ -19,7 +19,8 @@ function App() {
 
   return (
     <div className="App">
-      <Input add={updateList} />
+      <h1>Todo List</h1>
+      <Input add={updateList} values={null}/>
       <List list={list}/>
     </div>
   );
