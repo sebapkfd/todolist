@@ -5,7 +5,7 @@ const List = (props) => {
     const {list} = props;
     const [filter, setFilter] = useState('All');
 
-    const filteredList = list.filter(item => item.status === filter)
+    const filteredList = list.filter(item => item.status === filter);
 
     return (list) ? (
         <div id='todolist'>
