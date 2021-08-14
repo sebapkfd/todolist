@@ -21,8 +21,9 @@ const Todo = (props) => {
     }
 
     const editInput = (edit) ? <Edit values={todo} updateTodo={setTodo}/> : null;
+    const editLabel = (edit) ? 'Cancel' : 'Edit';
 
-    const updateButtonText = (status === 'Not Completed') ? 'Marks as Complete' : 'Mark as Not Complete';
+    const updateButtonText = (status === 'Not Completed') ? 'Marks as Completed' : 'Mark as Not Completed';
     
     if(display) {
         return (
@@ -34,7 +35,7 @@ const Todo = (props) => {
                 <p>Status: {status}</p>
                 <button onClick={() => deleteTodo()}>Delete</button>
                 <button onClick={() => updateStatus()}>{updateButtonText}</button>
-                <button onClick={() => setEdit(!edit)}>Edit</button>
+                <button onClick={() => setEdit(!edit)}>{editLabel}</button>
                 {editInput}
             </div>
         )
