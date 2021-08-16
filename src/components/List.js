@@ -1,28 +1,24 @@
 import { useState } from "react";
+import getTodos from "../methods/getTodos";
 import Todo from "./Todo";
+import { useSelector } from "react-redux";
 
-const List = (props) => {
-    const {list} = props;
+const List = () => {
+    const list = useSelector(state => state.todo);
     const [filter, setFilter] = useState('All');
-
-    const filteredList = list.filter(item => item.status === filter);
 
     return (list) ? (
         <div id='todolist'>
             <div>
                 <button onClick={()=> setFilter('All')}>All</button>
-                <button onClick={()=> setFilter('Completed')}>Completed</button>
-                <button onClick={()=> setFilter('Not Completed')}>Not Completed</button>
+                <button onClick={()=> setFilter('Not Completed')}>Completed</button>
+                <button onClick={()=> setFilter('Completed')}>Not Completed</button>
             </div>
-            {(filter === 'All') ? (
-                list.map((todo) => {
-                    return <Todo todo={todo} key={Math.random()*100}/>
-                })
-                ) : (
-                    filteredList.map((todo) => {
-                        return <Todo todo={todo} key={Math.random()*100}/>
-                })
-            )}
+            {
+                list
+                .filter(item => item.status !== filter)
+                .map(todo => <Todo todo={todo} key={Math.random()*100}/>)
+            }
         </div>
     ) : null;
 }

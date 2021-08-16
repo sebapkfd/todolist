@@ -3,7 +3,7 @@ import Task from "../methods/task";
 import saveTask from "../methods/saveTask";
 
 const Input = (props) => {
-    const {values, updateTodo} = props;
+    const {values} = props;
     const [title, setTitle] = useState(values.title);
     const [description, setDescription] = useState(values.description);
     const [date, setDate] = useState(values.date);
@@ -14,7 +14,6 @@ const Input = (props) => {
         e.preventDefault();
         const task = Task(title, values.id, description, date, priority);
         saveTask(task);
-        updateTodo(task);
         setDisplay(false);
     }
 

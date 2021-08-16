@@ -22,7 +22,6 @@ const Todo = (props) => {
 
     const editInput = (edit) ? <Edit values={todo} updateTodo={setTodo}/> : null;
     const editLabel = (edit) ? 'Cancel' : 'Edit';
-
     const updateButtonText = (status === 'Not Completed') ? 'Marks as Completed' : 'Mark as Not Completed';
     
     if(display) {
