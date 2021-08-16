@@ -9,11 +9,17 @@ const todoSlice = createSlice({
     reducers: {
         addTodo (state, action) {
             state.push(action.payload)
+        },
+        changeStatus (state, action) {
+            const {id, newStatus} = action.payload
+            const itemToChange = state.find(item => item.id === id)
+            if (itemToChange) {
+                itemToChange.status = newStatus
+            }
         }
-
     }
 })
 
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, changeStatus } = todoSlice.actions;
 
 export default todoSlice.reducer;

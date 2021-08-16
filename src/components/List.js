@@ -1,5 +1,4 @@
 import { useState } from "react";
-import getTodos from "../methods/getTodos";
 import Todo from "./Todo";
 import { useSelector } from "react-redux";
 

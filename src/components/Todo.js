@@ -2,12 +2,15 @@ import { useState } from "react";
 import saveTask from "../methods/saveTask";
 import Edit from '../components/Edit'
 import dateFormat from "../methods/dateFormat";
+import { changeStatus } from "../redux/todoSlice";
+import { useDispatch } from "react-redux";
 
 const Todo = (props) => {
     const [todo, setTodo] = useState(props.todo);
     const [display, setDisplay] = useState(true);
     const [edit, setEdit] = useState(false);
     const {title, id, description, date, priority, status} = todo;
+    const dispatch = useDispatch();
 
     const deleteTodo = () => {
         setDisplay(false);
@@ -15,8 +18,10 @@ const Todo = (props) => {
     }
 
     const updateStatus = () => {
-        const updatedTodo = (status === 'Not Completed') ? {...todo, status: 'Completed'} : {...todo, status: 'Not Completed'};
+        const newStatus = (status === 'Not Completed') ? 'Completed' : 'Not Completed';
+        const updatedTodo = {...todo, status: newStatus};
         setTodo(updatedTodo);
+        dispatch(changeStatus({id, newStatus}));
         saveTask(updatedTodo);
     }
 
