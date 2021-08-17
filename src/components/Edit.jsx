@@ -39,8 +39,8 @@ const Edit = (props) => {
                     <option value="High">High</option>
                 </select>
                 <button type='submit'>Ok</button>
+                <button onClick={() => setDisplay(!display)} type='button'>{editLabel}</button>
             </form>
-                <button onClick={() => setDisplay(!display)}>{editLabel}</button>
         </div>
     ) : (
         <button onClick={() => setDisplay(!display)}>{editLabel}</button>
