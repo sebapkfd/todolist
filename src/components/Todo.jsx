@@ -14,21 +14,18 @@ const Todo = (props) => {
     }
 
     const updateStatus = () => {
-        const newStatus = (status === 'Not Completed') ? 'Completed' : 'Not Completed';
+        const newStatus = !status;
         const updatedTodo = {...props.todo, status: newStatus};
         dispatch(changeStatus({id, newStatus}));
         saveTask(updatedTodo);
     }
-
-    const updateButtonText = (status === 'Not Completed') ? 'Marks as Completed' : 'Mark as Not Completed';
     
     if(props.todo) {
         return (
             <div className={'todo'}>
-                <button onClick={() => updateStatus()}>{updateButtonText}</button>
+                <input type='checkbox' checked={status} onChange={() => updateStatus()} />
                 <h2>{title}</h2>
                 <p>{dateFormat(date)}</p>
-                <p>Status: {status}</p>
                 <button onClick={() => deleteTodo()}>Delete</button>
                 <Edit values={props.todo} />
             </div>

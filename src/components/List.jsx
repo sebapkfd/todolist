@@ -10,8 +10,8 @@ const List = () => {
         <div id='todolist'>
             <div>
                 <button onClick={()=> setFilter('All')}>All</button>
-                <button onClick={()=> setFilter('Not Completed')}>Completed</button>
-                <button onClick={()=> setFilter('Completed')}>Not Completed</button>
+                <button onClick={()=> setFilter(false)}>Completed</button>
+                <button onClick={()=> setFilter(true)}>Not Completed</button>
             </div>
             {list.filter(item => item.status !== filter)
                 .map(todo => <Todo todo={todo} key={Math.random()*100}/>)
