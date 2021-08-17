@@ -8,7 +8,7 @@ const Input = (props) => {
     const [description, setDescription] = useState(values.description);
     const [date, setDate] = useState(values.date);
     const [priority, setPriority] = useState(values.priority);
-    const [display, setDisplay] = useState(true);
+    const [display, setDisplay] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,6 +16,8 @@ const Input = (props) => {
         saveTask(task);
         setDisplay(false);
     }
+
+    const editLabel = (display) ? 'Cancel' : 'Edit';
 
     return (display) ? (
         <form onSubmit={(e) => handleSubmit(e)}>
@@ -32,8 +34,11 @@ const Input = (props) => {
                 <option value="High">High</option>
             </select>
             <button type='submit'>Ok</button>
+            <button onClick={() => setDisplay(!display)}>{editLabel}</button>
         </form>
-    ) : null;
+    ) : (
+        <button onClick={() => setDisplay(!display)}>{editLabel}</button>
+    );
 }
 
 export default Input;
