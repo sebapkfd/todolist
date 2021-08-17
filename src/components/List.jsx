@@ -13,9 +13,7 @@ const List = () => {
                 <button onClick={()=> setFilter('Not Completed')}>Completed</button>
                 <button onClick={()=> setFilter('Completed')}>Not Completed</button>
             </div>
-            {
-                list
-                .filter(item => item.status !== filter)
+            {list.filter(item => item.status !== filter)
                 .map(todo => <Todo todo={todo} key={Math.random()*100}/>)
             }
         </div>

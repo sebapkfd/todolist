@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <Input/>
-      <List/>
+      <Input />
+      <List />
     </div>
   );
 }

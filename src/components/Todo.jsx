@@ -32,7 +32,7 @@ const Todo = (props) => {
                 <p>Status: {status}</p>
                 <button onClick={() => deleteTodo()}>Delete</button>
                 <button onClick={() => updateStatus()}>{updateButtonText}</button>
-                <Edit values={props.todo}/>
+                <Edit values={props.todo} />
             </div>
         )
     }
