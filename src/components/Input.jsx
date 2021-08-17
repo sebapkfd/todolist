@@ -12,17 +12,21 @@ const Input = () => {
     const [display, setDisplay] = useState(false);
     const dispatch = useDispatch();
 
+    const clearInputs = () => {
+        setTitle('');
+        setDescription('');
+        setDate('');
+        setPriority('Low');
+        setDisplay(false);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const id = `${localStorage.length}${title}`;
         const task = Task(title, id, description, date, priority);
         saveTask(task);
         dispatch(addTodo(task));
-        setTitle('');
-        setDescription('');
-        setDate('');
-        setPriority('Low');
-        setDisplay(false);
+        clearInputs();
     }
     
     if (display) {
