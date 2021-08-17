@@ -20,8 +20,8 @@ const todoSlice = createSlice({
         removeTodo(state, action) {
             const { id } = action.payload
             const itemToDelete = state.find(item => item.id === id)
-            const indexToDelete = state.indexOf(itemToDelete)
-            if (indexToDelete) {
+            if (itemToDelete) {
+                const indexToDelete = state.indexOf(itemToDelete)
                 state.splice(indexToDelete, 1)
             }
         },
