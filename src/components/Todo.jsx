@@ -25,11 +25,11 @@ const Todo = (props) => {
     if(props.todo) {
         return (
             <div className={'todo'}>
+                <button onClick={() => updateStatus()}>{updateButtonText}</button>
                 <h2>{title}</h2>
                 <p>{dateFormat(date)}</p>
                 <p>Status: {status}</p>
                 <button onClick={() => deleteTodo()}>Delete</button>
-                <button onClick={() => updateStatus()}>{updateButtonText}</button>
                 <Edit values={props.todo} />
             </div>
         )
