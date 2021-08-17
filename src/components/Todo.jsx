@@ -4,7 +4,6 @@ import dateFormat from "../methods/dateFormat";
 import { changeStatus, removeTodo } from "../redux/todoSlice";
 import { useDispatch } from "react-redux";
 import Details from "./Details";
-import { useState } from "react";
 
 const Todo = (props) => {
     const {title, id, description, priority, date, status} = props.todo;
@@ -25,13 +24,13 @@ const Todo = (props) => {
     if(props.todo) {
         return (
             <div className={'todo'}>
-                <input type='checkbox' checked={status} onChange={() => updateStatus()} />
-                <h2>{title}</h2>
-                <p>{dateFormat(date)}</p>
-                <div>
-                    <button onClick={() => deleteTodo()}>Delete</button>
+                <div className={'todo__basic-info'}>
+                    <input type='checkbox' checked={status} onChange={() => updateStatus()} />
+                    <h2>{title}</h2>
+                    <p>{dateFormat(date)}</p>
                 </div>
                 <div>
+                    <button onClick={() => deleteTodo()}>Delete</button>
                     <Edit values={props.todo} />
                     <Details info={{description, priority}} />
                 </div>

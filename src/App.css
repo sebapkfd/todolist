@@ -12,9 +12,13 @@
     border: 1px solid black;
     margin: 15px 0;
     padding: 10px;
+}
+
+.todo__basic-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 50%;
 }
 
 button {
