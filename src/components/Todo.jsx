@@ -1,18 +1,12 @@
 import saveTask from "../methods/saveTask";
-import Edit from '../components/Edit';
 import dateFormat from "../methods/dateFormat";
-import { changeStatus, removeTodo } from "../redux/todoSlice";
+import { changeStatus } from "../redux/todoSlice";
 import { useDispatch } from "react-redux";
-import Details from "./Details";
+import Options from "./Options";
 
 const Todo = (props) => {
-    const {title, id, description, priority, date, status} = props.todo;
+    const {title, id, date, status} = props.todo;
     const dispatch = useDispatch();
-
-    const deleteTodo = () => {
-        dispatch(removeTodo({id}));
-        localStorage.removeItem(id);
-    }
 
     const updateStatus = () => {
         const newStatus = !status;
@@ -29,11 +23,7 @@ const Todo = (props) => {
                     <h2>{title}</h2>
                     <p>{dateFormat(date)}</p>
                 </div>
-                <div>
-                    <button onClick={() => deleteTodo()}>Delete</button>
-                    <Edit values={props.todo} />
-                    <Details info={{description, priority}} />
-                </div>
+                <Options todo={props.todo}/>
             </div>
         )
     }
