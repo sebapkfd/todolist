@@ -20,7 +20,7 @@ const Edit = (props) => {
     }
 
     return (
-        <div>
+        <div className='edit'>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <label htmlFor='title'>Title: </label>
                 <input 

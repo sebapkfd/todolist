@@ -1,33 +1,38 @@
-import saveTask from "../methods/saveTask";
-import dateFormat from "../methods/dateFormat";
-import { changeStatus } from "../redux/todoSlice";
+import Edit from "./Edit";
+import Details from "./Details";
 import { useDispatch } from "react-redux";
-import Options from "./Options";
+import { removeTodo } from "../redux/todoSlice";
+import { useState } from "react";
+import Info from "./Info";
 
 const Todo = (props) => {
-    const {title, id, date, status} = props.todo;
+    const {id, description, priority} = props.todo;
+    const [showEdit, setShowEdit] = useState(false);
+    const [showDetails, setShowDetails] = useState(false);
     const dispatch = useDispatch();
 
-    const updateStatus = () => {
-        const newStatus = !status;
-        const updatedTodo = {...props.todo, status: newStatus};
-        dispatch(changeStatus({id, newStatus}));
-        saveTask(updatedTodo);
+    const deleteTodo = () => {
+        dispatch(removeTodo({id}));
+        localStorage.removeItem(id);
     }
-    
-    if(props.todo) {
-        return (
-            <div className={'todo'}>
-                <div className={'todo__basic-info'}>
-                    <input type='checkbox' checked={status} onChange={() => updateStatus()} />
-                    <h2>{title}</h2>
-                    <p>{dateFormat(date)}</p>
-                </div>
-                <Options todo={props.todo}/>
+
+    const edit = (showEdit) ? <Edit values={props.todo} /> : null;
+    const details = (showDetails) ? <Details info={{description, priority}} /> : null;
+    const editLabel = (showEdit) ? 'Close' : 'Edit';
+    const detailsLabel = (showDetails) ? 'Close' : 'Details';
+
+    return (
+        <div className={'todo'}>
+            <Info todo={props.todo}/>
+            <div className={'options'}>
+                <button onClick={() => deleteTodo()}>Delete</button>
+                <button onClick={() => setShowEdit(!showEdit)}>{editLabel}</button>
+                <button onClick={() => setShowDetails(!showDetails)}>{detailsLabel}</button>
             </div>
-        )
-    }
-    return null;
+            {edit}
+            {details}
+        </div>
+    )
 }
 
 export default Todo;
