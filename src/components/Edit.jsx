@@ -10,20 +10,16 @@ const Edit = (props) => {
     const [description, setDescription] = useState(values.description);
     const [date, setDate] = useState(values.date);
     const [priority, setPriority] = useState(values.priority);
-    const [display, setDisplay] = useState(false);
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const task = Task(title, values.id, description, date, priority);
         saveTask(task);
-        dispatch(updateTodo(task))
-        setDisplay(false);
+        dispatch(updateTodo(task));
     }
 
-    const editLabel = (display) ? 'Cancel' : 'Edit';
-
-    return (display) ? (
+    return (
         <div>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <label htmlFor='title'>Title: </label>
@@ -58,12 +54,9 @@ const Edit = (props) => {
                     <option value="High">High</option>
                 </select>
                 <button type='submit'>Ok</button>
-                <button onClick={() => setDisplay(!display)} type='button'>{editLabel}</button>
             </form>
         </div>
-    ) : (
-        <button onClick={() => setDisplay(!display)}>{editLabel}</button>
-    );
+    )
 }
 
 export default Edit;
