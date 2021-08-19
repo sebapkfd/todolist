@@ -1,8 +1,7 @@
-const Task = (title, id, description, date, priority ) =>{
+const Task = (title, id, date, priority ) =>{
     return {
         title,
         id,
-        description,
         date,
         priority,
         status: false

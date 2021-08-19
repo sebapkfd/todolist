@@ -26,11 +26,10 @@ const todoSlice = createSlice({
             }
         },
         updateTodo(state, action) {
-            const { id, title, description, date, priority } = action.payload
+            const { id, title, date, priority } = action.payload
             const itemToUpdate = state.find(item => item.id === id)
             if (itemToUpdate) {
                 itemToUpdate.title = title
-                itemToUpdate.description = description
                 itemToUpdate.date = date
                 itemToUpdate.priority = priority
             }

@@ -7,14 +7,13 @@ import { updateTodo } from '../redux/todoSlice';
 const Edit = (props) => {
     const {values} = props;
     const [title, setTitle] = useState(values.title);
-    const [description, setDescription] = useState(values.description);
     const [date, setDate] = useState(values.date);
     const [priority, setPriority] = useState(values.priority);
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const task = Task(title, values.id, description, date, priority);
+        const task = Task(title, values.id, date, priority);
         saveTask(task);
         dispatch(updateTodo(task));
     }
@@ -31,15 +30,6 @@ const Edit = (props) => {
                     maxLength={15}
                     onChange={(e) =>setTitle(e.target.value)} 
                 />
-                <label htmlFor='description'>Description: </label>
-                <textarea 
-                    type ='text' 
-                    name='description' 
-                    value={description} 
-                    maxLength={80}
-                    onChange={(e) =>setDescription(e.target.value)} 
-                />
-                <label htmlFor='date'>Date: </label>
                 <input 
                     type ='date' 
                     name='date' 

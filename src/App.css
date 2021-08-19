@@ -38,11 +38,15 @@ button {
     justify-content: flex-end;
 }
 
-.edit,
-.details {
+.edit {
     width: 80vw;
 }
 
 .description {
     word-break: break-all;
+}
+
+.input form{
+    background-color: turquoise;
+    width: 80vw;
 }

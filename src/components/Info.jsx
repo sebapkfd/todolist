@@ -4,7 +4,7 @@ import { changeStatus } from "../redux/todoSlice";
 import { useDispatch } from "react-redux";
 
 const Info = (props) => {
-    const {title, id, date, status} = props.todo;
+    const {title, id, date, priority, status} = props.todo;
     const dispatch = useDispatch();
 
     const updateStatus = () => {
@@ -20,6 +20,7 @@ const Info = (props) => {
                 <input type='checkbox' checked={status} onChange={() => updateStatus()} />
                 <h2>{title}</h2>
                 <p>{dateFormat(date)}</p>
+                <p>{priority} priority</p>
             </div>
         )
     }
