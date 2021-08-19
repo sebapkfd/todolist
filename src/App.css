@@ -4,8 +4,17 @@
     box-sizing: border-box;
 }
 
+:root {
+    --column-width: 60vw;
+    --mobile-column-width: 80vw;
+}
+
 .App {
     padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -15,39 +24,40 @@ button {
 .todo,
 .info,
 .options,
-.input {
+.input,
+#filters {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+}
+
+#filters {
+    justify-content: center;
 }
 
 .todo {
     border: 1px solid black;
     margin: 15px 0;
     padding: 10px;
-    width: 80vw;
     justify-content: space-between;
+    width: var(--column-width);
 }
 
 .info {
-    width: 35vw;
+    width: 70%;
     justify-content: space-between;
 }
 
 .options {
-    width: 35vw;
+    width: 30%;
     justify-content: flex-end;
 }
 
 .edit {
-    width: 80vw;
-}
-
-.description {
-    word-break: break-all;
+    width: var(--column-width);
 }
 
 .input {
-    width: 80vw;
+    width: var(--column-width);
     justify-content: space-between;
 }

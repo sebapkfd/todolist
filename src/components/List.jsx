@@ -8,7 +8,7 @@ const List = () => {
 
     return (list) ? (
         <div id='todolist'>
-            <div>
+            <div id='filters'>
                 <button onClick={()=> setFilter('All')}>All</button>
                 <button onClick={()=> setFilter(false)}>Completed</button>
                 <button onClick={()=> setFilter(true)}>Not Completed</button>
