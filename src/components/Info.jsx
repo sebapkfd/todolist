@@ -4,12 +4,12 @@ import { changeStatus } from "../redux/todoSlice";
 import { useDispatch } from "react-redux";
 
 const Info = (props) => {
-    const {title, id, date, priority, status} = props.todo;
+    const {todo, todo: {title, id, date, priority, status}} = props;
     const dispatch = useDispatch();
 
     const updateStatus = () => {
         const newStatus = !status;
-        const updatedTodo = {...props.todo, status: newStatus};
+        const updatedTodo = {...todo, status: newStatus};
         dispatch(changeStatus({id, newStatus}));
         saveTask(updatedTodo);
     }

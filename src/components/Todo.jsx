@@ -5,7 +5,7 @@ import { useState } from "react";
 import Info from "./Info";
 
 const Todo = (props) => {
-    const {id} = props.todo;
+    const {todo, todo: {id}} = props;
     const [showEdit, setShowEdit] = useState(false);
     const dispatch = useDispatch();
 
@@ -14,12 +14,12 @@ const Todo = (props) => {
         localStorage.removeItem(id);
     }
 
-    const edit = (showEdit) ? <Edit values={props.todo} /> : null;
+    const edit = (showEdit) ? <Edit values={todo} /> : null;
     const editLabel = (showEdit) ? 'Cancel' : 'Edit';
 
     return (
         <div className={'todo'}>
-            <Info todo={props.todo}/>
+            <Info todo={todo}/>
             <div className={'options'}>
                 <button onClick={() => deleteTodo()}>Delete</button>
                 <button onClick={() => setShowEdit(!showEdit)}>{editLabel}</button>

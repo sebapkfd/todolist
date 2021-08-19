@@ -26,16 +26,16 @@ const Edit = (props) => {
                     type ='text' 
                     name='title' 
                     value={title} 
-                    required 
                     maxLength={15}
                     onChange={(e) =>setTitle(e.target.value)} 
+                    required 
                 />
                 <input 
                     type ='date' 
                     name='date' 
                     value={date} 
-                    required
                     onChange={(e) =>setDate(e.target.value)} 
+                    required 
                 />
                 <label htmlFor='priority'>Priority: </label>
                 <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
