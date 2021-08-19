@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { updateTodo } from '../redux/todoSlice';
 
 const Edit = (props) => {
-    const {values} = props;
+    const {values, values: {id}} = props;
     const [title, setTitle] = useState(values.title);
     const [date, setDate] = useState(values.date);
     const [priority, setPriority] = useState(values.priority);
@@ -13,7 +13,7 @@ const Edit = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const task = Task(title, values.id, date, priority);
+        const task = Task(title, id, date, priority);
         saveTask(task);
         dispatch(updateTodo(task));
     }

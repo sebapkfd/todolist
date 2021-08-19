@@ -14,17 +14,14 @@ const Info = (props) => {
         saveTask(updatedTodo);
     }
     
-    if(props.todo) {
-        return (
-            <div className={'info'}>
-                <input type='checkbox' checked={status} onChange={() => updateStatus()} />
-                <h2>{title}</h2>
-                <p>{dateFormat(date)}</p>
-                <p>{priority} priority</p>
-            </div>
-        )
-    }
-    return null;
+    return (
+        <div className={'info'}>
+            <input type='checkbox' checked={status} onChange={() => updateStatus()} />
+            <h2>{title}</h2>
+            <p>{dateFormat(date)}</p>
+            <p>{priority} priority</p>
+        </div>
+    )
 
 }
 

@@ -14,7 +14,8 @@ button {
 
 .todo,
 .info,
-.options {
+.options,
+.input {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -46,7 +47,7 @@ button {
     word-break: break-all;
 }
 
-.input form{
-    background-color: turquoise;
+.input {
     width: 80vw;
+    justify-content: space-between;
 }
