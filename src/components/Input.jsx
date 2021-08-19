@@ -47,7 +47,7 @@ const Input = () => {
                     type ='text' 
                     name='description' 
                     value={description} 
-                    maxLength={100}
+                    maxLength={80}
                     onChange={(e) =>setDescription(e.target.value)} 
                     />
                     <label htmlFor='date'>Date: </label>

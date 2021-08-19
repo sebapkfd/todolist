@@ -3,10 +3,8 @@ const Details = (props) => {
 
     return (
         <div className={'details'}>
-            <p>Description</p>
-            <p>{description}</p>
-            <p>Priority</p>
-            <p>{priority}</p>
+            <p className={'priority'}>{priority} priority</p>
+            <p className={'description'}>Description: {description}</p>
         </div>
     )
 }

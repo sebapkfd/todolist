@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-
-:root {
-    --basic-width: 80vw;
-}
-
 .App {
     padding: 0 5vw;
 }
@@ -17,20 +12,20 @@ button {
     margin: 5px 5px 0 0;
 }
 
-.todo {
-    border: 1px solid black;
-    margin: 15px 0;
-    padding: 10px;
-    width: var(--basic-width);
-    justify-content: space-between;
-}
-
 .todo,
 .info,
 .options {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.todo {
+    border: 1px solid black;
+    margin: 15px 0;
+    padding: 10px;
+    width: 80vw;
+    justify-content: space-between;
 }
 
 .info {
@@ -43,6 +38,11 @@ button {
     justify-content: flex-end;
 }
 
-.edit, .details {
-    width: 70vw;
+.edit,
+.details {
+    width: 80vw;
+}
+
+.description {
+    word-break: break-all;
 }
