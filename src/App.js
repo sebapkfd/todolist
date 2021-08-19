@@ -5,7 +5,7 @@ import List from './components/List';
 function App() {
   return (
     <div className="App">
-      <h1>Todo List</h1>
+      <h1>To do List</h1>
       <Input />
       <List />
     </div>

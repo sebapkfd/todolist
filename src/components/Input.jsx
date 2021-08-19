@@ -58,7 +58,7 @@ const Input = () => {
         </form>
     ) : (
         <div>
-            <button onClick={() => setDisplay(true)}>Add Todo</button>
+            <button onClick={() => setDisplay(true)}>Add To do</button>
         </div>
     )
     
