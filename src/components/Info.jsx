@@ -16,8 +16,8 @@ const Info = (props) => {
     
     return (
         <div className={'info'}>
-            <input type='checkbox' checked={status} onChange={() => updateStatus()} />
-            <h2>{title}</h2>
+            <input type='checkbox' id='checkbox' checked={status} onChange={() => updateStatus()} />
+            <p>{title}</p>
             <p>{dateFormat(date)}</p>
             <p>{priority} priority</p>
         </div>

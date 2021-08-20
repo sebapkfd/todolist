@@ -2,20 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, sans-serif;
+    font-family: "Roboto", Verdana, sans-serif;
 }
 
 :root {
     --column-width: 60vw;
     --mobile-column-width: 80vw;
-    --dark: #053742;
+    --dark: #403b6b;
     --contrast: #39A2DB;
-    --soft: #A2DBFA;
+    --soft: #d4d4d4;
+    --clear: #FFF;
+
+
+    --dark: #0e0e0f;
+    --contrast: #141516;
+    --soft: #333336;
     --clear: #FFF;
 }
 
 body {
-    background-color: var(--clear);
+    background-color: var(--dark);
+    color: var(--clear);
 }
 
 .App {
@@ -24,22 +31,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--clear);
-    color: var(--dark);
 }
 
 button {
     margin: 5px 5px 0 0;
     border: none;
-    background-color: var(--dark);
+    background-color: var(--contrast);
     color: var(--clear);
     padding: 1vh 1vw;
-    border-radius: 15px;
+    border-radius: 5px;
     transition: 0.3s;
 }
 
 button:hover {
-    color: var(--contrast);
+    color: var(--dark);
+    background-color: var(--soft);
 }
 
 .todo,
@@ -61,9 +67,10 @@ button:hover {
     padding: 10px;
     justify-content: space-between;
     width: var(--column-width);
-    border: solid 1px var(--clear);
+    /* border: solid 1px var(--clear); */
     border-radius: 15px;
-    box-shadow: 1px 0.3em 1em var(--dark);
+    background-color: var(--contrast);
+    /* box-shadow: 1px 0.3em 1em var(--soft); */
 }
 
 .info {
@@ -86,17 +93,17 @@ button:hover {
 }
 
 .todo button {
-    background-color: var(--clear);
+    background-color: var(--contrast);
 }
 
 #edit-logo,
-#delete-icon {
-    color: var(--dark);
-    background-color: var(--clear);
+#delete-icon{
+    color: var(--clear);
+    background-color: var(--contrast);
     transition: 0.3s;
 }
 
 #edit-logo:hover,
 #delete-icon:hover {
-    color: var(--contrast);
+    color: var(--soft);
 }
