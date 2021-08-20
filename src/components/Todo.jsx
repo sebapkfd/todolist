@@ -15,13 +15,15 @@ const Todo = (props) => {
     }
 
     const edit = (showEdit) ? <Edit values={todo} /> : null;
-    const editLabel = (showEdit) ? 'Cancel' : 'Edit';
+    const editLabel = (showEdit) ? 'Cancel' : <span class="material-icons" id="edit-logo">mode_edit</span>;
 
     return (
         <div className={'todo'}>
             <Info todo={todo}/>
             <div className={'options'}>
-                <button onClick={() => deleteTodo()}>Delete</button>
+                <button onClick={() => deleteTodo()}>
+                    <span class="material-icons" id="delete-icon">delete</span>
+                </button>
                 <button onClick={() => setShowEdit(!showEdit)}>{editLabel}</button>
             </div>
             {edit}
