@@ -67,10 +67,8 @@ button:hover {
     padding: 10px;
     justify-content: space-between;
     width: var(--column-width);
-    /* border: solid 1px var(--clear); */
     border-radius: 15px;
     background-color: var(--contrast);
-    /* box-shadow: 1px 0.3em 1em var(--soft); */
 }
 
 .info {
