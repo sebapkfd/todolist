@@ -21,10 +21,10 @@ const Todo = (props) => {
         <div className={'todo'}>
             <Info todo={todo}/>
             <div className={'options'}>
-                <button onClick={() => deleteTodo()}>
+                <button onClick={() => deleteTodo()} className='todo__button'>
                     <span class="material-icons" id="delete-icon">delete</span>
                 </button>
-                <button onClick={() => setShowEdit(!showEdit)}>{editLabel}</button>
+                <button onClick={() => setShowEdit(!showEdit)} className='todo__button'>{editLabel}</button>
             </div>
             {edit}
         </div>

@@ -8,21 +8,15 @@
 :root {
     --column-width: 60vw;
     --mobile-column-width: 80vw;
-    --dark: #403b6b;
-    --contrast: #39A2DB;
-    --soft: #d4d4d4;
-    --clear: #FFF;
-
-
-    --dark: #0e0e0f;
-    --contrast: #141516;
-    --soft: #333336;
-    --clear: #FFF;
+    --dark: #000;
+    --contrast: #0070f3;
+    --soft: #eaeaea;
+    --clear: #fff;
 }
 
 body {
-    background-color: var(--dark);
-    color: var(--clear);
+    background-color: var(--clear);
+    color: var(--dark);
 }
 
 .App {
@@ -35,17 +29,18 @@ body {
 
 button {
     margin: 5px 5px 0 0;
-    border: none;
-    background-color: var(--contrast);
-    color: var(--clear);
+    border: 1px solid var(--soft);
+    color: var(--dark);
     padding: 1vh 1vw;
     border-radius: 5px;
     transition: 0.3s;
+    background-color: var(--clear);
 }
 
 button:hover {
     color: var(--dark);
-    background-color: var(--soft);
+    background-color: var(--clear);
+    border-color: var(--dark);
 }
 
 .todo,
@@ -67,8 +62,9 @@ button:hover {
     padding: 10px;
     justify-content: space-between;
     width: var(--column-width);
+    border: solid 1px var(--soft);
+    box-shadow: 1em 1em 1em var(--soft);
     border-radius: 15px;
-    background-color: var(--contrast);
 }
 
 .info {
@@ -90,18 +86,23 @@ button:hover {
     justify-content: space-between;
 }
 
-.todo button {
-    background-color: var(--contrast);
+.todo__button {
+    background-color: var(--clear);
+    border: 1px solid var(--contrast);
+    border: 1px solid var(--clear);
+}
+
+.todo__button:hover,
+.todo__button:hover > #edit-logo,
+.todo__button:hover > #delete-icon {
+    border-color: var(--contrast);
 }
 
 #edit-logo,
 #delete-icon{
-    color: var(--clear);
-    background-color: var(--contrast);
+    color: var(--contrast);
+    background-color: var(--clear);
+    border-radius: 5px;
     transition: 0.3s;
 }
 
-#edit-logo:hover,
-#delete-icon:hover {
-    color: var(--soft);
-}
