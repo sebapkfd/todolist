@@ -29,15 +29,18 @@ const Input = () => {
     
     return (display) ? (
         <form onSubmit={(e) => handleSubmit(e)} className={'input'}>
-            <label htmlFor='title'>Title</label>
-            <input 
-            type ='text' 
-            name='title' 
-            value={title} 
-            required 
-            maxLength={15}
-            onChange={(e) =>setTitle(e.target.value)} 
-            />
+            <div>
+                <label htmlFor='title'>Title</label>
+                <input 
+                type ='text' 
+                name='title' 
+                value={title} 
+                required 
+                maxLength={15}
+                onChange={(e) =>setTitle(e.target.value)} 
+                />
+            </div>
+            
             <input 
             type ='date' 
             name='date' 
@@ -45,12 +48,14 @@ const Input = () => {
             required
             onChange={(e) =>setDate(e.target.value)} 
             />
-            <label htmlFor='priority'>Priority</label>
-            <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-            </select>
+            <div>
+                <label htmlFor='priority'>Priority</label>
+                <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
             <div>
                 <button type='submit'>Ok</button>
                 <button onClick={() => setDisplay(false)} type='reset'>Cancel</button>

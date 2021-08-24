@@ -81,9 +81,19 @@ button:hover {
     width: var(--column-width);
 }
 
+input {
+    border: solid 1px var(--soft);
+}
+
 .input {
     width: var(--column-width);
-    justify-content: space-between;
+    justify-content: space-around;
+    box-shadow: 1em 1em 1em var(--soft);
+}
+
+label,
+.input button {
+    margin: 5px;
 }
 
 .todo__button {

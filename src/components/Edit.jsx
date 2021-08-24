@@ -21,7 +21,7 @@ const Edit = (props) => {
     return (
         <div className='edit'>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <label htmlFor='title'>Title: </label>
+                <label htmlFor='title'>Title</label>
                 <input 
                     type ='text' 
                     name='title' 
@@ -37,7 +37,7 @@ const Edit = (props) => {
                     onChange={(e) =>setDate(e.target.value)} 
                     required 
                 />
-                <label htmlFor='priority'>Priority: </label>
+                <label htmlFor='priority'>Priority</label>
                 <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
