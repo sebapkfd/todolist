@@ -37,12 +37,6 @@ button {
     background-color: var(--clear);
 }
 
-button:hover {
-    color: var(--dark);
-    background-color: var(--clear);
-    border-color: var(--dark);
-}
-
 .todo,
 .info,
 .options,
@@ -102,10 +96,11 @@ label,
     border: 1px solid var(--clear);
 }
 
-.todo__button:hover,
+button:hover,
 .todo__button:hover > #edit-logo,
 .todo__button:hover > #delete-icon {
     border-color: var(--contrast);
+    color: var(--contrast);
 }
 
 #edit-logo,

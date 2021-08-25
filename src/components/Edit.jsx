@@ -19,33 +19,31 @@ const Edit = (props) => {
     }
 
     return (
-        <div className='edit'>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <label htmlFor='title'>Title</label>
-                <input 
-                    type ='text' 
-                    name='title' 
-                    value={title} 
-                    maxLength={15}
-                    onChange={(e) =>setTitle(e.target.value)} 
-                    required 
-                />
-                <input 
-                    type ='date' 
-                    name='date' 
-                    value={date} 
-                    onChange={(e) =>setDate(e.target.value)} 
-                    required 
-                />
-                <label htmlFor='priority'>Priority</label>
-                <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                </select>
-                <button type='submit'>Ok</button>
-            </form>
-        </div>
+        <form onSubmit={(e) => handleSubmit(e)} className={'edit'}>
+            <label htmlFor='title'>Title</label>
+            <input 
+                type ='text' 
+                name='title' 
+                value={title} 
+                maxLength={15}
+                onChange={(e) =>setTitle(e.target.value)} 
+                required 
+            />
+            <input 
+                type ='date' 
+                name='date' 
+                value={date} 
+                onChange={(e) =>setDate(e.target.value)} 
+                required 
+            />
+            <label htmlFor='priority'>Priority</label>
+            <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button type='submit'>Ok</button>
+        </form>
     )
 }
 
