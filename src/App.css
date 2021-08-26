@@ -120,8 +120,21 @@ button:hover,
 }
 
 
-@media screen and (max-width: 600px) {
-    form {
-        flex-direction: column;
+@media screen and (max-width: 895px) {
+    form *{
+        width: 50%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    form div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    form button {
+        flex: 0;
     }
 }

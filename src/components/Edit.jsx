@@ -31,13 +31,15 @@ const Edit = (props) => {
                     required 
                 />
             </div>
-            <input 
-                type ='date' 
-                name='date' 
-                value={date} 
-                onChange={(e) =>setDate(e.target.value)} 
-                required 
-            />
+            <div>
+                <input 
+                    type ='date' 
+                    name='date' 
+                    value={date} 
+                    onChange={(e) =>setDate(e.target.value)} 
+                    required 
+                />
+            </div>
             <div>
                 <label htmlFor='priority'>Priority</label>
                 <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
@@ -46,7 +48,9 @@ const Edit = (props) => {
                     <option value="High">High</option>
                 </select>
             </div>
-            <button type='submit'>Ok</button>
+            <div>
+                <button type='submit'>Ok</button>
+            </div>
         </form>
     )
 }

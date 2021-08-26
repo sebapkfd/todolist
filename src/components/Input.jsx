@@ -40,7 +40,6 @@ const Input = () => {
                 onChange={(e) =>setTitle(e.target.value)} 
                 />
             </div>
-            
             <input 
             type ='date' 
             name='date' 
