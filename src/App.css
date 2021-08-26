@@ -63,12 +63,17 @@ button {
 }
 
 .info {
-    width: 70%;
+    width: 80%;
     justify-content: space-between;
 }
 
+.info p {
+    min-width: 130px;
+    text-align: center;
+}
+
 .options {
-    width: 30%;
+    margin-left: auto;
     justify-content: flex-end;
     flex-wrap: nowrap;
 }
