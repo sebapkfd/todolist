@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 :root {
@@ -41,6 +41,7 @@ button {
 .info,
 .options,
 .input,
+.edit,
 #filters {
     display: flex;
     align-items: center;
@@ -73,6 +74,7 @@ button {
 
 .edit {
     width: var(--column-width);
+    justify-content: space-between;
 }
 
 input {
