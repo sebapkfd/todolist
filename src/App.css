@@ -63,7 +63,7 @@ button {
 }
 
 .info {
-    width: 80%;
+    width: 70%;
     justify-content: space-between;
 }
 
@@ -78,24 +78,30 @@ button {
     flex-wrap: nowrap;
 }
 
-.edit {
-    width: var(--column-width);
-    justify-content: space-between;
-}
-
 input {
     border: solid 1px var(--soft);
 }
 
-.input {
+form {
     width: var(--column-width);
     justify-content: space-around;
+}
+
+.edit {
+    width: 100%;
+}
+
+.input {
     box-shadow: 1em 1em 1em var(--soft);
 }
 
 label,
 .input button {
     margin: 5px;
+}
+
+#date__label {
+    display: none;
 }
 
 .todo__button {
@@ -120,18 +126,26 @@ button:hover,
 }
 
 
-@media screen and (max-width: 895px) {
-    form *{
+@media screen and (max-width: 700px) {
+    #date__label {
+        display: inline;
+    }
+    
+    form {
         width: 50%;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
     }
 
-    form div {
+    .form__section {
+        width: 100%;
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+    }
+
+    .form__section * {
+        width: 50%;
     }
 
     form button {

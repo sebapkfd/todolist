@@ -29,7 +29,7 @@ const Input = () => {
     
     return (display) ? (
         <form onSubmit={(e) => handleSubmit(e)} className={'input'}>
-            <div>
+            <div className={'form__section'}>
                 <label htmlFor='title'>Title</label>
                 <input 
                 type ='text' 
@@ -40,14 +40,17 @@ const Input = () => {
                 onChange={(e) =>setTitle(e.target.value)} 
                 />
             </div>
-            <input 
-            type ='date' 
-            name='date' 
-            value={date} 
-            required
-            onChange={(e) =>setDate(e.target.value)} 
-            />
-            <div>
+            <div className={'form__section'}>
+                <label htmlFor='date' id='date__label'>Date</label>
+                <input 
+                type ='date' 
+                name='date' 
+                value={date} 
+                required
+                onChange={(e) =>setDate(e.target.value)} 
+                />
+            </div>
+            <div className={'form__section'}>
                 <label htmlFor='priority'>Priority</label>
                 <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
                     <option value="Low">Low</option>
@@ -55,7 +58,7 @@ const Input = () => {
                     <option value="High">High</option>
                 </select>
             </div>
-            <div>
+            <div className={'form__section'}>
                 <button type='submit'>Ok</button>
                 <button onClick={() => setDisplay(false)} type='reset'>Cancel</button>
             </div>

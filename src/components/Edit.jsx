@@ -20,7 +20,7 @@ const Edit = (props) => {
 
     return (
         <form onSubmit={(e) => handleSubmit(e)} className={'edit'}>
-            <div>
+            <div className={'form__section'}>
                 <label htmlFor='title'>Title</label>
                 <input 
                     type ='text' 
@@ -31,7 +31,8 @@ const Edit = (props) => {
                     required 
                 />
             </div>
-            <div>
+            <div className={'form__section'}>
+                <label htmlFor='date' id='date__label'>Date</label>
                 <input 
                     type ='date' 
                     name='date' 
@@ -40,7 +41,7 @@ const Edit = (props) => {
                     required 
                 />
             </div>
-            <div>
+            <div className={'form__section'}>
                 <label htmlFor='priority'>Priority</label>
                 <select value={priority} onChange={(e) =>setPriority(e.target.value)}>
                     <option value="Low">Low</option>
@@ -48,7 +49,7 @@ const Edit = (props) => {
                     <option value="High">High</option>
                 </select>
             </div>
-            <div>
+            <div className={'form__section'}>
                 <button type='submit'>Ok</button>
             </div>
         </form>
