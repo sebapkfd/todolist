@@ -4,8 +4,7 @@ import saveTask from "../methods/saveTask";
 import { useDispatch } from "react-redux";
 import { updateTodo } from '../redux/todoSlice';
 
-const Edit = (props) => {
-    const {values, values: {id}} = props;
+const Edit = ({ values, values: { id } }) => {
     const [title, setTitle] = useState(values.title);
     const [date, setDate] = useState(values.date);
     const [priority, setPriority] = useState(values.priority);

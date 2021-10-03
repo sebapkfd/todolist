@@ -4,8 +4,7 @@ import { removeTodo } from "../redux/todoSlice";
 import { useState } from "react";
 import Info from "./Info";
 
-const Todo = (props) => {
-    const {todo, todo: {id}} = props;
+const Todo = ({ todo, todo: { id }}) => {
     const [showEdit, setShowEdit] = useState(false);
     const dispatch = useDispatch();
 

@@ -3,8 +3,7 @@ import dateFormat from "../methods/dateFormat";
 import { changeStatus } from "../redux/todoSlice";
 import { useDispatch } from "react-redux";
 
-const Info = (props) => {
-    const {todo, todo: {title, id, date, priority, status}} = props;
+const Info = ({todo, todo : { title, id, date, priority, status }}) => {
     const dispatch = useDispatch();
 
     const updateStatus = () => {
