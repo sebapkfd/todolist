@@ -16,12 +16,13 @@
     --night-mode-1: rgb(33,36,41);
     --night-mode-2: rgb(39,42,49);
     --night-mode-font: rgb(255, 255, 255);
-    --night-mode-tone: rgb(250, 112, 0);
+    --night-mode-tone: rgb(6, 191, 204);
+    --night-gradient: linear-gradient(0deg, rgba(33,36,41,1) 0%, rgba(39,42,49,1) 97%);
 }
 
 body {
-    background-color: var(--clear);
-    color: var(--dark);
+    background-color: var(--night-mode-1);
+    color: var(--night-mode-font);
 }
 
 .App {
@@ -35,16 +36,17 @@ body {
 
 h1 {
     margin-top: 1em;
+    color: var(--night-mode-tone);
 }
 
 button {
     margin: 5px 5px 0 0;
-    border: 1px solid var(--soft);
-    color: var(--dark);
+    border: 1px solid var(--night-mode-1);
+    background-color: var(--night-mode-1);
+    color: var(--night-mode-font);
     padding: 1vh 1vw;
     border-radius: 5px;
     transition: 0.3s;
-    background-color: var(--clear);
 }
 
 .todo,
@@ -67,14 +69,19 @@ button {
     padding: 10px;
     justify-content: space-between;
     width: var(--column-width);
-    border: solid 1px var(--soft);
-    box-shadow: 1em 1em 1em var(--soft);
+    background-color: var(--night-mode-2);
+    background: rgb(33,36,41);
+    background: var(--night-gradient);
     border-radius: 15px;
 }
 
 .info {
     width: 70%;
     justify-content: space-between;
+}
+
+.todo__title {
+    color: var(--night-mode-tone);
 }
 
 .info p {
@@ -88,8 +95,16 @@ button {
     flex-wrap: nowrap;
 }
 
-input {
+input, 
+select {
     border: solid 1px var(--soft);
+    background: var(--night-mode-1);
+    color: var(--night-mode-font);
+    border: 1px solid var(--night-mode-2);
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 
 form {
@@ -99,10 +114,6 @@ form {
 
 .edit {
     width: 100%;
-}
-
-.input {
-    box-shadow: 1em 1em 1em var(--soft);
 }
 
 label,
@@ -115,22 +126,19 @@ label,
 }
 
 .todo__button {
-    background-color: var(--clear);
-    border: 1px solid var(--contrast);
-    border: 1px solid var(--clear);
+    background-color: var(--night-gradient);
+    border: none;
 }
 
 button:hover,
 .todo__button:hover > #edit-logo,
 .todo__button:hover > #delete-icon {
-    border-color: var(--contrast);
-    color: var(--contrast);
+    color: var(--night-mode-tone);
 }
 
 #edit-logo,
 #delete-icon{
-    color: var(--contrast);
-    background-color: var(--clear);
+    color: var(--night-mode-font);
     border-radius: 5px;
     transition: 0.3s;
 }

@@ -16,7 +16,7 @@ const Info = ({todo, todo : { title, id, date, priority, status }}) => {
     return (
         <div className={'info'}>
             <input type='checkbox' id='checkbox' checked={status} onChange={() => updateStatus()} />
-            <p>{title}</p>
+            <p className={'todo__title'}>{title}</p>
             <p>{dateFormat(date)}</p>
             <p>{priority} priority</p>
         </div>
