@@ -12,6 +12,11 @@
     --contrast: #0070f3;
     --soft: #eaeaea;
     --clear: #fff;
+
+    --night-mode-1: rgb(33,36,41);
+    --night-mode-2: rgb(39,42,49);
+    --night-mode-font: rgb(255, 255, 255);
+    --night-mode-tone: rgb(250, 112, 0);
 }
 
 body {
